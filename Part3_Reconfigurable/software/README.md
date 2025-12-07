@@ -5,5 +5,4 @@ Place software artifacts here (notebooks, trained model files, scripts):
 - `VGG16_Quantization_Aware_Training.pdf`
 - `misc/` for helper scripts and data processing utilities
 
-Notes for graders:
 - Include instructions to reproduce results (dependencies, commands) if non-standard.

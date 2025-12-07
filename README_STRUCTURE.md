@@ -7,7 +7,7 @@ Quick checklist:
 - Each `hardware/sim` folder must contain a plain text file named exactly `filelist` (no extension) listing relative paths to the source Verilog files in `../verilog/`.
 - Use the included `TEMPLATE_FILELIST.txt` as a reference when creating your `filelist`.
 
-How to run TAs' checks (for your reference):
+How we will run checks (for your reference):
 ```pwsh
 cd Part1_Vanilla/hardware/sim
 iveri filelist
