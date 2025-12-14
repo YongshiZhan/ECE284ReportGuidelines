@@ -1,0 +1,10 @@
+Fmax    103.94MHz
+Total Thermal Power Dissipation     291.9mW
+Core Static Thermal Power Dissipation   119.55 mW
+I/O Thermal Power Dissipation   172.35 mW
+Family	Cyclone IV GX
+Device	EP4CGX150DF31I7AD
+Timing Models	Final
+Total logic elements	18,831 / 149,760 ( 13 % )
+Total registers	13416
+Total pins	463 / 508 ( 91 % )
