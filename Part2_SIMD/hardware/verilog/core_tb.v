@@ -270,8 +270,8 @@ initial begin
       8: w_file_name = tile ? "data_2b_wgt_otile1_kij8.txt" : "data_2b_wgt_otile0_kij8.txt";
       endcase
       
-
-      w_file = $fopen({"../datafiles/",w_file_name}, "r");
+      weight_fullpath = $sformatf("../datafiles/%s", w_file_name);
+      w_file = $fopen(weight_fullpath, "r");
       if (w_file == 0) begin
         $display("Error opening weight file %s", w_file_name);
         $finish;
@@ -1108,6 +1108,7 @@ always @ (posedge clk) begin
    execute_q  <= execute;
    load_q     <= load;
 end
+
 
 
 endmodule
