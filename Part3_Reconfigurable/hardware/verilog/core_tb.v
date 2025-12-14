@@ -267,9 +267,9 @@ initial begin
   ////////////// TEST MODE SELECTION ///////////////////////
   //////////////////////////////////////////////////////////
   // Set test_mode = 0 for WS mode, test_mode = 1 for OS mode
-  // test_mode = 0;
-  test_mode = 1;
   
+  for (test_mode = 0; test_mode <= 1; test_mode = test_mode + 1) begin
+    // full WS or OS test
   if (test_mode == 0) begin
     $display("############ Testing WS Mode #############");
   end else begin
@@ -921,6 +921,7 @@ initial begin
     #0.5 clk = 1'b0;  
     #0.5 clk = 1'b1;  
   end
+  end // end of test_mode for loop
 
   #10 $finish;
 
