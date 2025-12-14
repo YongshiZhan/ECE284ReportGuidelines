@@ -259,19 +259,19 @@ initial begin
       k_j = kij % KERNEL_SIZE;
 
       case(kij)
-      0: w_file_name = tile ? "data_2b_wgt_otile1_kij0.txt" : "data_2b_wgt_otile0_kij0.txt";
-      1: w_file_name = tile ? "data_2b_wgt_otile1_kij1.txt" : "data_2b_wgt_otile0_kij1.txt";
-      2: w_file_name = tile ? "data_2b_wgt_otile1_kij2.txt" : "data_2b_wgt_otile0_kij2.txt";
-      3: w_file_name = tile ? "data_2b_wgt_otile1_kij3.txt" : "data_2b_wgt_otile0_kij3.txt";
-      4: w_file_name = tile ? "data_2b_wgt_otile1_kij4.txt" : "data_2b_wgt_otile0_kij4.txt";
-      5: w_file_name = tile ? "data_2b_wgt_otile1_kij5.txt" : "data_2b_wgt_otile0_kij5.txt";
-      6: w_file_name = tile ? "data_2b_wgt_otile1_kij6.txt" : "data_2b_wgt_otile0_kij6.txt";
-      7: w_file_name = tile ? "data_2b_wgt_otile1_kij7.txt" : "data_2b_wgt_otile0_kij7.txt";
-      8: w_file_name = tile ? "data_2b_wgt_otile1_kij8.txt" : "data_2b_wgt_otile0_kij8.txt";
+      0: w_file_name = tile ? "../datafiles/data_2b_wgt_otile1_kij0.txt" : "../datafiles/data_2b_wgt_otile0_kij0.txt";
+      1: w_file_name = tile ? "../datafiles/data_2b_wgt_otile1_kij1.txt" : "../datafiles/data_2b_wgt_otile0_kij1.txt";
+      2: w_file_name = tile ? "../datafiles/data_2b_wgt_otile1_kij2.txt" : "../datafiles/data_2b_wgt_otile0_kij2.txt";
+      3: w_file_name = tile ? "../datafiles/data_2b_wgt_otile1_kij3.txt" : "../datafiles/data_2b_wgt_otile0_kij3.txt";
+      4: w_file_name = tile ? "../datafiles/data_2b_wgt_otile1_kij4.txt" : "../datafiles/data_2b_wgt_otile0_kij4.txt";
+      5: w_file_name = tile ? "../datafiles/data_2b_wgt_otile1_kij5.txt" : "../datafiles/data_2b_wgt_otile0_kij5.txt";
+      6: w_file_name = tile ? "../datafiles/data_2b_wgt_otile1_kij6.txt" : "../datafiles/data_2b_wgt_otile0_kij6.txt";
+      7: w_file_name = tile ? "../datafiles/data_2b_wgt_otile1_kij7.txt" : "../datafiles/data_2b_wgt_otile0_kij7.txt";
+      8: w_file_name = tile ? "../datafiles/data_2b_wgt_otile1_kij8.txt" : "../datafiles/data_2b_wgt_otile0_kij8.txt";
       endcase
       
-      weight_fullpath = $sformatf("../datafiles/%s", w_file_name);
-      w_file = $fopen(weight_fullpath, "r");
+      
+      w_file = $fopen(w_file_name, "r");
       if (w_file == 0) begin
         $display("Error opening weight file %s", w_file_name);
         $finish;
@@ -504,19 +504,19 @@ initial begin
     $display("Debug: psum checking...");
     for (kij=0; kij<len_kij; kij=kij+1) begin 
       case(kij)
-        0: acc_file_name = "data_2b_psum_kij0.txt";
-        1: acc_file_name = "data_2b_psum_kij1.txt";
-        2: acc_file_name = "data_2b_psum_kij2.txt";
-        3: acc_file_name = "data_2b_psum_kij3.txt";
-        4: acc_file_name = "data_2b_psum_kij4.txt";
-        5: acc_file_name = "data_2b_psum_kij5.txt";
-        6: acc_file_name = "data_2b_psum_kij6.txt";
-        7: acc_file_name = "data_2b_psum_kij7.txt";
-        8: acc_file_name = "data_2b_psum_kij8.txt";
+        0: acc_file_name = "../datafiles/data_2b_psum_kij0.txt";
+        1: acc_file_name = "../datafiles/data_2b_psum_kij1.txt";
+        2: acc_file_name = "../datafiles/data_2b_psum_kij2.txt";
+        3: acc_file_name = "../datafiles/data_2b_psum_kij3.txt";
+        4: acc_file_name = "../datafiles/data_2b_psum_kij4.txt";
+        5: acc_file_name = "../datafiles/data_2b_psum_kij5.txt";
+        6: acc_file_name = "../datafiles/data_2b_psum_kij6.txt";
+        7: acc_file_name = "../datafiles/data_2b_psum_kij7.txt";
+        8: acc_file_name = "../datafiles/data_2b_psum_kij8.txt";
         default: $error("Invalid kij index");
       endcase
 
-      acc_file = $fopen({"../datafiles/",acc_file_name}, "r");
+      acc_file = $fopen(acc_file_name, "r");
       // Following three lines are to remove the first three comment lines of the file
       acc_scan_file = $fgets(line, acc_file);
       acc_scan_file = $fgets(line, acc_file);
@@ -731,19 +731,19 @@ initial begin
     k_j = kij % KERNEL_SIZE;
 
     case(kij)
-     0: w_file_name = "data_4b_wgt_otile0_kij0.txt";
-     1: w_file_name = "data_4b_wgt_otile0_kij1.txt";
-     2: w_file_name = "data_4b_wgt_otile0_kij2.txt";
-     3: w_file_name = "data_4b_wgt_otile0_kij3.txt";
-     4: w_file_name = "data_4b_wgt_otile0_kij4.txt";
-     5: w_file_name = "data_4b_wgt_otile0_kij5.txt";
-     6: w_file_name = "data_4b_wgt_otile0_kij6.txt";
-     7: w_file_name = "data_4b_wgt_otile0_kij7.txt";
-     8: w_file_name = "data_4b_wgt_otile0_kij8.txt";
+     0: w_file_name = "../datafiles/data_4b_wgt_otile0_kij0.txt";
+     1: w_file_name = "../datafiles/data_4b_wgt_otile0_kij1.txt";
+     2: w_file_name = "../datafiles/data_4b_wgt_otile0_kij2.txt";
+     3: w_file_name = "../datafiles/data_4b_wgt_otile0_kij3.txt";
+     4: w_file_name = "../datafiles/data_4b_wgt_otile0_kij4.txt";
+     5: w_file_name = "../datafiles/data_4b_wgt_otile0_kij5.txt";
+     6: w_file_name = "../datafiles/data_4b_wgt_otile0_kij6.txt";
+     7: w_file_name = "../datafiles/data_4b_wgt_otile0_kij7.txt";
+     8: w_file_name = "../datafiles/data_4b_wgt_otile0_kij8.txt";
     endcase
     
 
-    w_file = $fopen({"../datafiles/",w_file_name}, "r");
+    w_file = $fopen(w_file_name, "r");
     if (w_file == 0) begin
       $display("Error opening weight file %s", w_file_name);
       $finish;
@@ -951,19 +951,19 @@ initial begin
   $display("Debug: psum checking...");
   for (kij=0; kij<len_kij; kij=kij+1) begin 
     case(kij)
-      0: acc_file_name = "data_4b_psum_kij0.txt";
-      1: acc_file_name = "data_4b_psum_kij1.txt";
-      2: acc_file_name = "data_4b_psum_kij2.txt";
-      3: acc_file_name = "data_4b_psum_kij3.txt";
-      4: acc_file_name = "data_4b_psum_kij4.txt";
-      5: acc_file_name = "data_4b_psum_kij5.txt";
-      6: acc_file_name = "data_4b_psum_kij6.txt";
-      7: acc_file_name = "data_4b_psum_kij7.txt";
-      8: acc_file_name = "data_4b_psum_kij8.txt";
+      0: acc_file_name = "../datafiles/data_4b_psum_kij0.txt";
+      1: acc_file_name = "../datafiles/data_4b_psum_kij1.txt";
+      2: acc_file_name = "../datafiles/data_4b_psum_kij2.txt";
+      3: acc_file_name = "../datafiles/data_4b_psum_kij3.txt";
+      4: acc_file_name = "../datafiles/data_4b_psum_kij4.txt";
+      5: acc_file_name = "../datafiles/data_4b_psum_kij5.txt";
+      6: acc_file_name = "../datafiles/data_4b_psum_kij6.txt";
+      7: acc_file_name = "../datafiles/data_4b_psum_kij7.txt";
+      8: acc_file_name = "../datafiles/data_4b_psum_kij8.txt";
       default: $error("Invalid kij index");
     endcase
 
-    acc_file = $fopen({"../datafiles/",cc_file_name}, "r");
+    acc_file = $fopen(acc_file_name, "r");
     // Following three lines are to remove the first three comment lines of the file
     acc_scan_file = $fgets(line, acc_file);
     acc_scan_file = $fgets(line, acc_file);
